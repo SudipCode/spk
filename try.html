@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudip Paudel | Graphic Designer</title>
+    <meta name="description"
+        content="Portfolio of Sudip Paudel - Graphic Designer specializing in Social Media Design, Branding, Posters, Banners & Logos">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #f5f5f5;
+            --bg-secondary: #e8e8e8;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --accent: #6e56cf;
+            --accent-hover: #8a6cf7;
+            --card-bg: #ffffff;
+            --border: #dee2e6;
+        }
+
+        body.dark-mode {
+            --bg-primary: #0f0f17;
+            --bg-secondary: #1a1a2e;
+            --text-primary: #e0e0ff;
+            --text-secondary: #a0a0cc;
+            --accent: #6e56cf;
+            --accent-hover: #8a6cf7;
+            --card-bg: #16213e;
+            --border: #334466;
+        }
+
+        /* Professional Accent Themes */
+        body.theme-purple {
+            --accent: #6e56cf;
+            --accent-hover: #8a6cf7;
+        }
+
+        body.theme-emerald {
+            --accent: #10b981;
+            --accent-hover: #34d399;
+        }
+
+        body.theme-indigo {
+            --accent: #4f46e5;
+            --accent-hover: #6366f1;
+        }
+
+        body.theme-amber {
+            --accent: #f59e0b;
+            --accent-hover: #fbbf24;
+        }
+
+        body.theme-rose {
+            --accent: #e11d48;
+            --accent-hover: #fb7185;
+        }
+
+        body.theme-cyan {
+            --accent: #0891b2;
+            --accent-hover: #22d3ee;
+        }
+
+        body.theme-slate {
+            --accent: #475569;
+            --accent-hover: #64748b;
+        }
+
+        body.theme-orange {
+            --accent: #ea580c;
+            --accent-hover: #fb923c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s;
+        }
+
+        body.dark-mode header {
+            background: rgba(15, 15, 23, 0.95);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 3px;
+            transform: rotate(-15deg);
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            right: -5px;
+            bottom: -5px;
+            box-shadow: -8px -8px 0 rgba(255, 255, 255, 0.6);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* Settings Icon - Bottom Left with 360° Rotation */
+        .settings-fixed {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 999;
+        }
+
+        .settings-icon {
+            font-size: 2.2rem;
+            cursor: pointer;
+            color: var(--accent);
+            background: var(--bg-secondary);
+            padding: 18px;
+            border-radius: 50%;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+            animation: rotate360 20s linear infinite;
+        }
+
+        body.dark-mode .settings-icon {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .settings-icon:hover {
+            animation-play-state: paused;
+            transform: scale(1.2);
+        }
+
+        @keyframes rotate360 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .settings-dropdown {
+            position: absolute;
+            bottom: 90px;
+            left: 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.2rem;
+            display: none;
+            flex-direction: column;
+            gap: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 260px;
+        }
+
+        body.dark-mode .settings-dropdown {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .settings-dropdown.active {
+            display: flex;
+        }
+
+        .mode-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1rem;
+        }
+
+        .theme-colors {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+        }
+
+        .theme-color {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .theme-color:hover {
+            transform: scale(1.15);
+            border-color: var(--text-primary);
+        }
+
+        .theme-color.purple {
+            background: #6e56cf;
+        }
+
+        .theme-color.emerald {
+            background: #10b981;
+        }
+
+        .theme-color.indigo {
+            background: #4f46e5;
+        }
+
+        .theme-color.amber {
+            background: #f59e0b;
+        }
+
+        .theme-color.rose {
+            background: #e11d48;
+        }
+
+        .theme-color.cyan {
+            background: #0891b2;
+        }
+
+        .theme-color.slate {
+            background: #475569;
+        }
+
+        .theme-color.orange {
+            background: #ea580c;
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            gap: 3rem;
+        }
+
+        .hero-left {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 15px;
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+            animation: fadeInRight 1s ease forwards 1s;
+        }
+
+        .hero-image:hover {
+            opacity: 1;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 0.85;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .hero-content h1 .accent-name {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .hero-content h1 span {
+            display: block;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-content h1 span:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .hero-content h1 span:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 1.5s;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-start;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 2s;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button.primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .cta-button.primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(110, 86, 207, 0.3);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .typed-text {
+            color: #ea580c;
+            font-weight: 600;
+            min-height: 1.2em;
+            display: inline-block;
+            border-right: 3px solid #ea580c;
+            padding-right: 5px;
+            animation: typing 3s steps(20, end) 1.5s 1 normal both, blink 0.7s infinite;
+        }
+
+        .typed-text.typing-complete {
+            animation: typing 3s steps(20, end) 1.5s forwards, blink 0.7s infinite;
+        }
+
+        .typed-text.no-cursor {
+            border-right: none;
+            padding-right: 0;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+                opacity: 1;
+            }
+            to {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+
+        @keyframes blink {
+            0%, 49% {
+                border-right-color: var(--accent);
+            }
+            50%, 100% {
+                border-right-color: transparent;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            position: relative;
+            color: var(--text-primary);
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* About */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Portfolio */
+        .filter-menu {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.8rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .zoom-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .portfolio-item:hover .zoom-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .zoom-icon:hover {
+            background: var(--accent-hover);
+            transform: scale(1.2);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9998;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            background: var(--bg-primary);
+            border-radius: 15px;
+            overflow: hidden;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+
+        .modal-close:hover {
+            background: var(--accent-hover);
+            transform: rotate(90deg);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .portfolio-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 2rem 1.5rem 1.5rem;
+            color: white;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card i {
+            font-size: 4rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button.submit-btn {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        button.submit-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            animation: zoomIn 0.6s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        .lightbox .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            padding: 1rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .lightbox .nav-arrow:hover {
+            opacity: 1;
+        }
+
+        .lightbox .prev {
+            left: 30px;
+        }
+
+        .lightbox .next {
+            right: 30px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.8rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--bg-primary);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 4rem;
+                transition: left 0.4s;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-left {
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.4rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .settings-fixed {
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span>Sudip Paudel</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <i class="fas fa-bars mobile-toggle" id="mobileToggle"></i>
+        </nav>
+    </header>
+
+    <!-- Settings Icon - Bottom Left with 360° Rotation -->
+    <div class="settings-fixed">
+        <i class="fas fa-cog settings-icon" id="settingsBtn"></i>
+        <div class="settings-dropdown" id="settingsDropdown">
+            <div class="mode-toggle">
+                <label>Dark Mode</label>
+                <i class="fas fa-moon" id="themeToggle"></i>
+            </div>
+            <div>
+                <label>Accent Colors</label>
+                <div class="theme-colors">
+                    <div class="theme-color purple" data-theme="purple"></div>
+                    <div class="theme-color emerald" data-theme="emerald"></div>
+                    <div class="theme-color indigo" data-theme="indigo"></div>
+                    <div class="theme-color amber" data-theme="amber"></div>
+                    <div class="theme-color rose" data-theme="rose"></div>
+                    <div class="theme-color cyan" data-theme="cyan"></div>
+                    <div class="theme-color slate" data-theme="slate"></div>
+                    <div class="theme-color orange" data-theme="orange"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-left">
+            <div class="hero-content">
+                <h1>
+                    <span>Hello, I'm <span class="accent-name">Sudip Paudel</span></span>
+                    <span><span class="typed-text">Graphic Designer</span></span>
+                </h1>
+                <p>Creating stunning visuals in Social Media, Branding, Posters, Banners & Logos</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="cta-button primary">View Portfolio</a>
+                    <a href="#portfolio" class="cta-button secondary">Designs</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="https://cdn-icons-png.flaticon.com/512/8668/8668686.png" alt="Graphic Designer" class="hero-image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hi! I'm Sudip Paudel, a passionate graphic designer specializing in modern digital design.</p>
+                <p>I create eye-catching social media graphics, professional branding, posters, banners, and logos that
+                    help brands stand out.</p>
+                <p>Always delivering creative and high-quality work!</p>
+            </div>
+            <div class="about-image">
+                <img src="https://via.placeholder.com/500x600/6e56cf/ffffff?text=Your+Photo" alt="Sudip Paudel">
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Zoom Modal -->
+    <div class="modal" id="zoomModal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Zoomed Image">
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2 class="section-title">My Portfolio</h2>
+        <div class="filter-menu">
+            <button class="filter-btn active" data-filter="all">All Designs</button>
+            <button class="filter-btn" data-filter="designs">Designs</button>
+            <button class="filter-btn" data-filter="social">Social Media Design</button>
+            <button class="filter-btn" data-filter="branding">Branding</button>
+            <button class="filter-btn" data-filter="poster">Poster / Banner</button>
+            <button class="filter-btn" data-filter="logo">Logos</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- Social Media Design -->
+            <div class="portfolio-item" data-category="social">
+                <img src="https://mysocialboutique.co/wp-content/uploads/2023/05/seamlessn-instagram-engagement-carousel-templates-for-canva.png"
+                    alt="Instagram Carousel">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Social Media</div>
+                    <h3>Instagram Carousel</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="social">
+                <img src="https://happilydwell.com/wp-content/uploads/2023/08/Instagram-Carousel-Post-Canva-Template-2-scaled.jpg"
+                    alt="Social Post">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Social Media</div>
+                    <h3>Social Media Post</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="social">
+                <img src="https://i.etsystatic.com/49779104/r/il/0f7187/5741088517/il_fullxfull.5741088517_tk0p.jpg"
+                    alt="Story Design">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Social Media</div>
+                    <h3>Instagram Story</h3>
+                </div>
+            </div>
+
+            <!-- Branding -->
+            <div class="portfolio-item" data-category="branding">
+                <img src="https://static-cse.canva.com/blob/1156738/featuredimagebrandkit.jpg" alt="Brand Kit">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Branding</div>
+                    <h3>Full Brand Kit</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="branding">
+                <img src="https://static-cse.canva.com/blob/1285273/brand-kit-img-2.png" alt="Brand Guidelines">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Branding</div>
+                    <h3>Brand Guidelines</h3>
+                </div>
+            </div>
+
+            <!-- Poster / Banner -->
+            <div class="portfolio-item" data-category="poster">
+                <img src="https://static-cse.canva.com/blob/1119860/designanawesomeposterfeaturedimage.jpg"
+                    alt="Event Poster">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Poster / Banner</div>
+                    <h3>Event Poster</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="poster">
+                <img src="https://marketplace.canva.com/EAGQshFPaRg/1/0/1600w/canva-blue-and-white-simple-online-course-double-sided-poster-landscape-MqhWhp3T9hg.jpg"
+                    alt="Sale Banner">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Poster / Banner</div>
+                    <h3>Sale Banner</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="poster">
+                <img src="https://static-cse.canva.com/blob/1133997/design-posters-events-occasions-banner.60fca850.jpg"
+                    alt="Promotional Poster">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Poster / Banner</div>
+                    <h3>Promotional Poster</h3>
+                </div>
+            </div>
+
+            <!-- Logos -->
+            <div class="portfolio-item" data-category="logo">
+                <img src="https://static-cse.canva.com/blob/1667261/create_logo-mockup_how-to.jpg" alt="Logo Mockup">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Logo</div>
+                    <h3>Modern Logo Design</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="logo">
+                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/5e2b8d105374183.5f5d6e7b0e1c8.jpg"
+                    alt="Minimal Logo">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Logo</div>
+                    <h3>Minimal Logo</h3>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="logo">
+                <img src="https://i.pinimg.com/originals/4d/6f/5b/4d6f5b8c9d0e1f2g3h4i5j6k7l8m9n0o.jpg"
+                    alt="Brand Logo">
+                <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="overlay">
+                    <div class="category">Logo</div>
+                    <h3>Brand Logo</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fab fa-instagram"></i>
+                <h3>Social Media Design</h3>
+                <p>Eye-catching posts, stories, carousels, and ads for Instagram, Facebook, and more.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shapes"></i>
+                <h3>Branding</h3>
+                <p>Complete brand identity including mood boards, guidelines, and assets.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Poster & Banner Design</h3>
+                <p>Professional posters, banners, flyers, and promotional materials.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-copyright"></i>
+                <h3>Logo Design</h3>
+                <p>Unique, modern, and memorable logos tailored to your brand.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="close" id="closeLightbox">×</span>
+        <i class="fas fa-chevron-left nav-arrow prev" id="prevImg"></i>
+        <i class="fas fa-chevron-right nav-arrow next" id="nextImg"></i>
+        <img src="" alt="Portfolio Image" id="lightboxImg">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Sudip Paudel. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:your@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Typing Animation
+        function initTypingAnimation() {
+            const typedText = document.querySelector('.typed-text');
+            if (!typedText) return;
+
+            const text = typedText.textContent;
+            typedText.textContent = '';
+            typedText.style.width = 'auto';
+            
+            let index = 0;
+            const typingSpeed = 150; // milliseconds per character
+
+            function typeCharacter() {
+                if (index < text.length) {
+                    typedText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeCharacter, typingSpeed);
+                } else {
+                    // Animation complete
+                    typedText.classList.add('typing-complete', 'no-cursor');
+                }
+            }
+
+            // Start typing after hero section is visible
+            setTimeout(typeCharacter, 1500);
+        }
+
+        // Initialize typing animation when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initTypingAnimation);
+        } else {
+            initTypingAnimation();
+        }
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Settings Dropdown
+        const settingsBtn = document.getElementById('settingsBtn');
+        const dropdown = document.getElementById('settingsDropdown');
+
+        if (settingsBtn && dropdown) {
+            settingsBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!settingsBtn.contains(e.target) && !dropdown.contains(e.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                themeToggle.classList.toggle('fa-moon');
+                themeToggle.classList.toggle('fa-sun');
+            });
+        }
+
+        // Accent Color Themes
+        document.querySelectorAll('.theme-color').forEach(color => {
+            color.addEventListener('click', () => {
+                const theme = color.getAttribute('data-theme');
+                // Reset all theme classes except dark-mode
+                document.body.className = document.body.classList.contains('dark-mode') ? 'dark-mode' : '';
+                if (theme !== 'purple') { // purple is default
+                    document.body.classList.add(`theme-${theme}`);
+                }
+                dropdown.classList.remove('active');
+            });
+        });
+
+        // Smooth Scroll & Active Link Highlight
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+
+                links.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                navLinks.classList.remove('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Image Zoom Modal Functionality
+        const modal = document.getElementById('zoomModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalClose = document.getElementById('modalClose');
+        const zoomIcons = document.querySelectorAll('.zoom-icon');
+
+        zoomIcons.forEach(icon => {
+            icon.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const img = this.parentElement.querySelector('img');
+                modalImage.src = img.src;
+                modal.classList.add('active');
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Portfolio Filter & Lightbox
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const prevImg = document.getElementById('prevImg');
+        const nextImg = document.getElementById('nextImg');
+        let currentIndex = 0;
+        let visibleItems = [];
+
+        function updateVisibleItems() {
+            visibleItems = Array.from(portfolioItems).filter(item => getComputedStyle(item).display !== 'none');
+        }
+
+        function showImage(index) {
+            updateVisibleItems();
+            if (visibleItems.length === 0) return;
+            if (index >= visibleItems.length) index = 0;
+            if (index < 0) index = visibleItems.length - 1;
+            currentIndex = index;
+            lightboxImg.src = visibleItems[index].querySelector('img').src;
+            lightbox.classList.add('active');
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach((item, i) => {
+                    const matches = filterValue === 'all' || item.getAttribute('data-category') === filterValue;
+                    item.style.opacity = matches ? '0' : '0';
+                    item.style.transform = matches ? 'translateY(30px)' : 'translateY(30px)';
+                    item.style.display = matches ? 'block' : 'none';
+
+                    if (matches) {
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, i * 50);
+                    }
+                });
+            });
+        });
+
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                updateVisibleItems();
+                currentIndex = visibleItems.indexOf(item);
+                if (currentIndex !== -1) showImage(currentIndex);
+            });
+        });
+
+        if (closeLightbox) closeLightbox.addEventListener('click', () => lightbox.classList.remove('active'));
+        if (lightbox) lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+        if (prevImg) prevImg.addEventListener('click', () => showImage(currentIndex - 1));
+        if (nextImg) nextImg.addEventListener('click', () => showImage(currentIndex + 1));
+
+        document.addEventListener('keydown', (e) => {
+            if (lightbox && lightbox.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+                if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+                if (e.key === 'Escape') lightbox.classList.remove('active');
+            }
+        });
+
+        // Contact Form
+        const form = document.querySelector('.contact-form form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you! Your message has been sent.');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+
+</html>
