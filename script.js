@@ -191,48 +191,10 @@
         // ===== UTILITY FUNCTIONS =====
         // Download CV Function
         function downloadCV() {
-            // Create a simple CV content
-            const cvContent = `
-AMIR SAPKOTA
-Marketing Professional | Business Student
-─────────────────────────────────────────────
-
-CONTACT INFORMATION
-Phone: +977 980-4226907
-Email: itsamirspk@gmail.com
-Location: Madi-7, Chitwan
-─────────────────────────────────────────────
-
-EDUCATION
-Bachelor of Business Studies (BBS)
-Madi Campus
-2023 – Present
-─────────────────────────────────────────────
-
-PROFESSIONAL SKILLS
-• Marketing Strategy (90%)
-• SEO & SEM (60%)
-• Branding (88%)
-• Communication (92%)
-• Content Creation (87%)
-• Social Media Management (89%)
-─────────────────────────────────────────────
-
-PROFESSIONAL SUMMARY
-Motivated and hardworking commerce student with practical experience 
-in sales and marketing. Possesses strong communication and customer-
-handling skills with the ability to work effectively both independently 
-and as part of a team. Eager to learn, grow professionally, and 
-contribute positively to organizational success.
-─────────────────────────────────────────────
-
-Generated: ${new Date().toLocaleDateString()}
-`;
-
-            // Create a blob and download
+            // Download the CV Resume PDF file
             const element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(cvContent));
-            element.setAttribute('download', 'Amir_Sapkota_CV.txt');
+            element.setAttribute('href', 'images/CV Resume.pdf');
+            element.setAttribute('download', 'CV Resume.pdf');
             element.style.display = 'none';
             document.body.appendChild(element);
             element.click();
